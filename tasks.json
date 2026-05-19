@@ -1,1 +1,10 @@
-[]
+[
+  {
+    "title": "Hacer la compra",
+    "done": true
+  },
+  {
+    "title": "Estudiar tema 2",
+    "done": false
+  }
+]
