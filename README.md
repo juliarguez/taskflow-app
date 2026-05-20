@@ -14,3 +14,8 @@ Hacer una aplicación simple de tareas en Python para practicar lógica básica,
 
 ## Cómo ejecutar
 python main.py
+
+## Versiones disponibles
+
+- `main.py`: versión de consola.
+- `app.py`: versión web desarrollada con Flask.
