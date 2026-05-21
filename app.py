@@ -19,5 +19,12 @@ def add():
     save_tasks(tasks)
     return redirect("/")
 
+@app.route("/delete/<int:index>")
+def delete(index):
+    tasks = load_tasks()
+    tasks.pop(index)
+    save_tasks(tasks)
+    return redirect("/")
+
 if __name__ == "__main__":
     app.run(debug=True)

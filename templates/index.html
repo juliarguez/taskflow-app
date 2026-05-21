@@ -24,7 +24,10 @@
                     {% else %}
                         ✘
                     {% endif %}
+
                     {{ task.title }}
+
+                    <a href="/delete/{{ loop.index0 }}">Eliminar</a>
                 </li>
             {% endfor %}
         </ul>

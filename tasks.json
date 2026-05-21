@@ -4,15 +4,11 @@
     "done": true
   },
   {
-    "title": "Estudiar tema 2",
+    "title": "Estudiar lengua",
     "done": false
   },
   {
-    "title": "Ordenar la habitaci\u00f3n",
-    "done": false
-  },
-  {
-    "title": "Salir a correr",
+    "title": "ir al medico",
     "done": false
   }
 ]
