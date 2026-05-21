@@ -2,7 +2,7 @@
 
 from flask import Flask, render_template, request, redirect
 from storage import load_tasks, save_tasks
-from todo import add_task
+from todo import add_task, delete_task, complete_task, edit_task
 
 app = Flask(__name__)
 
@@ -22,14 +22,14 @@ def add():
 @app.route("/delete/<int:index>")
 def delete(index):
     tasks = load_tasks()
-    tasks.pop(index)
+    delete_task(tasks, index)
     save_tasks(tasks)
     return redirect("/")
 
 @app.route("/complete/<int:index>")
 def complete(index):
     tasks = load_tasks()
-    tasks[index]["done"] = True
+    complete_task(tasks, index)
     save_tasks(tasks)
     return redirect("/")
 
@@ -48,8 +48,9 @@ def edit(index):
 def update(index):
     tasks = load_tasks()
 
+
     new_title = request.form["title"]
-    tasks[index]["title"] = new_title
+    edit_task(tasks, index, new_title)
     save_tasks(tasks)
 
     return redirect("/")

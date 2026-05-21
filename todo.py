@@ -12,5 +12,3 @@ def complete_task(tasks, index):
 def edit_task(tasks, index, new_title):
     if 0 <= index < len(tasks):
         tasks[index]["title"] = new_title
-    else:
-        print("Índice inválido")
