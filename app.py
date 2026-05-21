@@ -33,5 +33,26 @@ def complete(index):
     save_tasks(tasks)
     return redirect("/")
 
+@app.route("/edit/<int:index>")
+def edit(index):
+    tasks = load_tasks()
+    task = tasks[index]
+
+    return render_template(
+        "edit.html",
+        task = task,
+        index = index
+    )
+
+@app.route("/update/<int:index>", methods=["POST"])
+def update(index):
+    tasks = load_tasks()
+
+    new_title = request.form["title"]
+    tasks[index]["title"] = new_title
+    save_tasks(tasks)
+
+    return redirect("/")
+
 if __name__ == "__main__":
     app.run(debug=True)
