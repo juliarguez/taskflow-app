@@ -26,5 +26,12 @@ def delete(index):
     save_tasks(tasks)
     return redirect("/")
 
+@app.route("/complete/<int:index>")
+def complete(index):
+    tasks = load_tasks()
+    tasks[index]["done"] = True
+    save_tasks(tasks)
+    return redirect("/")
+
 if __name__ == "__main__":
     app.run(debug=True)

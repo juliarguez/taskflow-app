@@ -1,14 +1,26 @@
 [
   {
-    "title": "Hacer la compra",
+    "title": "ir a comprar",
     "done": true
   },
   {
-    "title": "Estudiar lengua",
-    "done": false
+    "title": "ir a correr",
+    "done": true
   },
   {
-    "title": "ir al medico",
-    "done": false
+    "title": "estudiar",
+    "done": true
+  },
+  {
+    "title": "hacer yoga",
+    "done": true
+  },
+  {
+    "title": "ir al gimnasio",
+    "done": true
+  },
+  {
+    "title": "cocinar",
+    "done": true
   }
 ]

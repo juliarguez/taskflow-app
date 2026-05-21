@@ -27,7 +27,9 @@
 
                     {{ task.title }}
 
-                    <a href="/delete/{{ loop.index0 }}">Eliminar</a>
+                    <a href="/complete/{{ loop.index0 }}" style="color: green;">Completar</a>
+
+                    <a href="/delete/{{ loop.index0 }}" style="color: red;">Eliminar</a>
                 </li>
             {% endfor %}
         </ul>
