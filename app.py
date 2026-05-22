@@ -55,5 +55,11 @@ def update(index):
 
     return redirect("/")
 
+@app.route("/clear", methods=["POST"])
+def clear():
+    tasks = []
+    save_tasks(tasks)
+    return redirect("/")
+
 if __name__ == "__main__":
     app.run(debug=True)

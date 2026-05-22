@@ -5,13 +5,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>To - Do App</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 
 <body>
     <h1>Mis tareas</h1>
 
-    <form action="/add" method="POST">
-        <input type="text" name="title" placeholder="Nueva tarea" required>
+    <form action="/clear" method="POST" onsubmit="return confirm('¿Seguro que quieres borrar TODAS las tareas?')">
+        <button type="submit" 
+            {% if not tasks %}
+            disabled
+            {% endif %}
+            class="danger-btn">
+            Borrar todas las tareas
+        </button>
+    </form>
+
+    <form class="task-form" action="/add" method="POST">
+        <input type="text" name="title" placeholder="Nueva tarea" required autofocus>
         <button type="submit">Añadir</button>
     </form>
 
@@ -19,24 +30,25 @@
         <ul>
             {% for task in tasks %}
                 <li>
-                    {% if task.done %}
-                        ✔
-                    {% else %}
-                        ✘
-                    {% endif %}
+                    <span class="{% if task.done %}task-text done{% else %}task-text{% endif %}">
+                        {{ task.title }}
+                    </span>
 
-                    {{ task.title }}
+                    <div class="actions">
+                        <a class="complete-btn" href="/complete/{{ loop.index0 }}">Completar</a>
 
-                    <a href="/complete/{{ loop.index0 }}" style="color: green;">Completar</a>
+                        <a class="edit-btn" href="/edit/{{ loop.index0 }}">Editar</a>
 
-                    <a href="/edit/{{ loop.index0 }}" style="color: brown;">Editar</a>
-
-                    <a href="/delete/{{ loop.index0 }}" style="color: red;">Eliminar</a>
+                        <a class="delete-btn" href="/delete/{{ loop.index0 }}" onclick="return confirm('¿Seguro que quieres eliminar esta tarea?')">Eliminar</a>
+                    </div>
+                    
                 </li>
             {% endfor %}
         </ul>
     {% else %}
-        <p>No hay tareas.</p>
+        <p style="text-align: center; color: gray;">
+            💤 No hay tareas aún... añade la primera!!!
+        </p>
     {% endif %}
 </body>
 
