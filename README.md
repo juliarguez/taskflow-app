@@ -1,21 +1,35 @@
-# To-Do App en Python
+# TaskFlow – Productivity App (CLI + Web)
 
-Proyecto simple de consola para gestionar tareas.
+A simple task manager application built with Python.
+The project started as a CLI tool and evolverd into a web application using Flask.
 
-## Funcionalidades
-- Añadir tareas
-- Eliminar tareas
-- Marcar como completadas
-- Editar tareas
-- Guardado automático en JSON
+## Functionalities
+- Add tasks
+- Edit tasks
+- Delete tasks
+- Mark tasks as completed
+- Delete all tasks
+- Persistent storage using JSON
 
-## Objetivo
-Hacer una aplicación simple de tareas en Python para practicar lógica básica, estructura de proyecto y manejo de archivos.
+## Technologies Used
+- Python
+- HTML / CSS
+- Flask
+- Jinja2 templates
+- JSON (data storage)
 
-## Cómo ejecutar
+## Objective
+This project was built with the aim of practicing:
+- Python logic and project structure
+- Web development with Flask
+- CRUD operations
+- UX improvements
+
+## How to run
+
+### Web app
+python app.py
+Then, open http://127.0.0.1:5000/
+
+### CLI version
 python main.py
-
-## Versiones disponibles
-
-- `main.py`: versión de consola.
-- `app.py`: versión web desarrollada con Flask.
