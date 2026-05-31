@@ -1,7 +1,8 @@
 # TaskFlow – Productivity App (CLI + Web)
 
 A simple task manager application built with Python.
-The project started as a CLI tool and evolverd into a web application using Flask.
+
+The project started as a CLI tool and evolved into a web application using Flask.
 
 ## Functionalities
 - Add tasks
@@ -19,7 +20,7 @@ The project started as a CLI tool and evolverd into a web application using Flas
 - JSON (data storage)
 
 ## Objective
-This project was built with the aim of practicing:
+This project was built to practice:
 - Python logic and project structure
 - Web development with Flask
 - CRUD operations
@@ -29,6 +30,7 @@ This project was built with the aim of practicing:
 
 ### Web app
 python app.py
+
 Then, open http://127.0.0.1:5000/
 
 ### CLI version
