@@ -9,7 +9,10 @@ app = Flask(__name__)
 @app.route("/")
 def home():
     tasks = load_tasks()
-    return render_template("index.html", tasks=tasks)
+    return render_template(
+        "index.html",
+        tasks=tasks["pending"],
+        )
 
 @app.route("/add", methods=["POST"])
 def add():
@@ -36,12 +39,22 @@ def complete(index):
 @app.route("/edit/<int:index>")
 def edit(index):
     tasks = load_tasks()
-    task = tasks[index]
+    task = tasks["pending"][index]
 
     return render_template(
         "edit.html",
         task = task,
         index = index
+    )
+
+@app.route("/completed")
+def completed():
+
+    data = load_tasks()
+
+    return render_template(
+        "completed.html",
+        tasks=data["completed"]
     )
 
 @app.route("/update/<int:index>", methods=["POST"])
@@ -57,7 +70,10 @@ def update(index):
 
 @app.route("/clear", methods=["POST"])
 def clear():
-    tasks = []
+    tasks = {
+        "pending": [],
+        "completed": []
+    }
     save_tasks(tasks)
     return redirect("/")
 

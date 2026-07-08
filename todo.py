@@ -1,14 +1,15 @@
-def add_task(tasks, title):
-    tasks.append({"title": title, "done": False})
+def add_task(data, title):
+    data["pending"].append({"title": title})
 
-def delete_task(tasks, index):
-    if 0 <= index < len(tasks):
-        tasks.pop(index)
+def delete_task(data, index):
+    if 0 <= index < len(data["pending"]):
+        data["pending"].pop(index)
 
-def complete_task(tasks, index):
-    if 0 <= index < len(tasks):
-        tasks[index]["done"] = True
+def complete_task(data, index):
+    if 0 <= index < len(data["pending"]):
+        task = data["pending"].pop(index)
+        data["completed"].append(task)
 
-def edit_task(tasks, index, new_title):
-    if 0 <= index < len(tasks):
-        tasks[index]["title"] = new_title
+def edit_task(data, index, new_title):
+    if 0 <= index < len(data["pending"]):
+        data["pending"][index]["title"] = new_title

@@ -11,13 +11,38 @@ h1 {
     color: #333;
 }
 
+.tasks-title {
+    font-size: 28px;
+    margin-bottom: 25px;
+    position: relative;
+}
+
+.tasks-title::after {
+    content: "";
+    display: block;
+    width: 50px;
+    height: 4px;
+    margin-top: 8px;
+    border-radius: 5px;
+}
+
+.app-header {
+    text-align: center;
+    padding: 40px;
+    margin-bottom: 30px;
+    background: white;
+    border-radius: 20px;
+}
+
 .danger-btn {
     background: #ff4d4d;
     color: white;
     border: none;
-    padding: 8px 12px;
-    border-radius: 6px;
+    padding: 8px 14px;
+    border-radius: 10px;
     cursor: pointer;
+    text-decoration: none;
+    font-weight: 600;
 }
 
 .danger-btn:hover {
@@ -91,17 +116,56 @@ li:hover {
     font-weight: bold;
 }
 
+.actions a:hover {
+    transform: translateY(-2px);
+    opacity: 0.8;
+}
+
 .complete-btn {
-    background: #d4f5dd;
-    color: green;
+    background: #d1fae5;
+    color: #047857;
+    padding: 8px 14px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 600;
 }
 
 .edit-btn {
-    background: #f3e5d8;
-    color: brown;
+    background: #fef3c7;
+    color: #92400e;
+    padding: 8px 14px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 600;
 }
 
 .delete-btn {
-    background: #ffd6d6;
-    color: red;
+    background: #fee2e2;
+    color: #b91c1c;
+    padding: 8px 14px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.completed {
+    background: #047857;
+    color: white;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 10px;
+    cursor: pointer;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.completed:hover {
+    background: #047857;
+}
+
+.top-buttons {
+    display: flex;
+    gap: 12px;          /* separación entre botones */
+    align-items: center;
+    margin-bottom: 20px; /* separación respecto al formulario */
 }
